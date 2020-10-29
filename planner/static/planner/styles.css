@@ -1,0 +1,40 @@
+#header{
+  margin-left: 7px;
+  color: navy;
+}
+
+#Course-form,#Assignment-form{
+  display: none;
+  align-content: stretch;
+}
+
+#Course-form__btn:hover,#Assignment-form__btn:hover{
+  cursor: pointer;
+}
+
+#list{
+  padding: 10px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+  margin-right:600px;
+}
+
+.Course_Divs:hover{
+  cursor: pointer;
+}
+
+#update_btn:hover{
+  cursor: pointer;
+}
+
+table, th, td {
+  border-style: solid;
+  border-width: 3px;
+  border-color: black;
+    padding: 10px;
+
+}
+.update_courses_btn:hover{
+  cursor: pointer;
+}

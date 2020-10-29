@@ -1,0 +1,51 @@
+{% extends "planner/layout.html" %}
+
+{% block body %}
+<div id="Assignment-Filter">
+  <form id="filter__form">
+    <label for="filter_options">Filter Your Assignments</label>
+    <select id="filter_options">
+      {% for course in courses %}
+      <option value="{{course.course_title}}">{{course.course_title}}</option>
+      {% endfor %}
+    </select>
+    <input id="filter_submit" type="submit" value="Filter">
+  </form>
+</div>
+<hr>
+<div id="index_message" style="display: none;">
+  You Do Not Have Any Assignments from this Course.
+  <button id="hide_message" onclick="document.getElementById('index_message').style.display = 'none';">OK</button>
+  <br>
+  <br>
+</div>
+<div id="AllAssignments_listed">
+  {% if Assignments %}
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Type</th>
+      <th>Course</th>
+      <th>Due Date</th>
+      <th>Complete</th>
+    </tr>
+    {% for posts in Assignments %}
+    <tr id="{{posts.id}}" class="{{posts.Assignment_course.course_title}}">
+      <td>{{posts.Assignment_title}}</td>
+      <td>{{posts.Assignment_type}}</td>
+      <td>{{posts.Assignment_course.course_title}}</td>
+      <td>{{posts.Assignment_due}}</td>
+      <td><button id="{{posts.id}}-complete" class="complete__btn" onclick="Complete('{{posts.id}}')">Finished!</button>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% else %}
+  <p>You are done with your homework!</p>
+  {% endif %}
+</div>
+<div id="Specific_Assignments" style="display: none;">
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "planner/layout.html" %}
+{% block body %}
+{% if Courses %}
+<div class="Course_Divs">
+  {% for course in Courses %}
+  {% if course.course_enrolled %}
+  <div id="{{course.course_title}}-div">
+    <h1 id="{{course.id}}-course" class="course" onclick="ShowCourses('{{course.id}}', 'AllCourses')">{{course.course_title}}</h1>
+  </div>
+  {% endif %}
+  {% endfor %}
+  <a id="redirct_create" href="{% url 'create' %}">Add Courses</a>
+</div>
+<div id="Course_expanded" style="display: none;">
+
+</div>
+{% else %}
+<p>No Courses found</p>
+<a href="{% url 'create' %}">Add Courses</a>
+{% endif %}
+{% endblock %}

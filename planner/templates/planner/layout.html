@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title> Daily Planner </title>
+    <link rel="icon" type="image/png" href="data:image/png;base64,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" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'planner/styles.css' %}">
+    <script src="{% static 'planner/script.js' %}"></script>
+  </head>
+
+  <body id="header">
+    <h1>Student Homework Planner</h1>
+    <div>
+      {% if user.is_authenticated %}
+      Signed in as <h9 id="user_name"><strong>{{ user.username }}</strong></h9>
+      {% else %}
+      Not signed in.
+      {% endif %}
+    </div>
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'index' %}">Planner</a>
+      </li>
+      {% if user.is_authenticated %}
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'create' %}">Create New</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'course' %}">Courses</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+      </li>
+      {% else %}
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'login' %}">Log In</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'register' %}">Register</a>
+      </li>
+      {% endif %}
+    </ul>
+    <hr>
+    {% block body %}
+    {% endblock %}
+  </body>
+</html>

@@ -1,0 +1,35 @@
+{% extends "planner/layout.html" %}
+
+{% block body %}
+<div id="Course-create">
+  <h1 id="Course-form__btn" onclick="SeeForm('Course-form')">Add a Course</h1>
+  <form id="Course-form" method="POST" action="{% url 'NewCourse' %}">
+    <p>* = required</p>
+    {% csrf_token %}
+    {{ CourseForm.as_p }}
+    <input type="submit" value="Enroll!">
+  </form>
+</div>
+<hr>
+<p><b>{{error}}</b></p>
+<div id="Assignment-create">
+  <h1 id="Assignment-form__btn" onclick="SeeForm('Assignment-form')">Add an Assignment</h1>
+  <form id="Assignment-form" method="POST" action="{% url 'NewAssignment' %}">
+    <hr>
+    <br>
+    <div id="list">
+      <h2>List of Courses</h2>
+      <ul>
+        {% for course in courses %}
+        <li>{{course.course_title}}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <br>
+    <hr>
+    {% csrf_token %}
+    {{AssignmentForm.as_p}}
+    <input type="submit">
+  </form>
+</div>
+{% endblock %}
