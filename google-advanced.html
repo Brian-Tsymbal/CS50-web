@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="eng">
+  <head>
+    <title>Google Advanced Search</title>
+    <style>
+      links {
+        text-align: right;
+      }
+
+      a:visited {
+        color: blue;
+      }
+
+
+      h1 {
+        border-bottom-color: rgb(217, 48, 37);
+        border-bottom-style: none;
+        border-image-outset: 0;
+        border-image-repeat: stretch;
+        border-image-slice: 100%;
+        border-image-source: none;
+        border-image-width: 1;
+        border-left-color: rgb(217, 48, 37);
+        border-left-style: none;
+        border-left-width: 0px;
+        border-right-color: rgb(217, 48, 37);
+        border-right-style: none;
+        border-right-width: 0px;
+        border-top-color: rgb(217, 48, 37);
+        border-top-style: none;
+        border-top-width: 0px;
+        color: rgb(217, 48, 37);
+        display: block;
+        font-family: arial, sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        height: 23px;
+        margin-bottom: 25px;
+        margin-left: 35px;
+        margin-right: 35px;
+        margin-top: 25px;
+        padding-bottom: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 0px;
+        text-decoration-color: rgb(217, 48, 37);
+        text-decoration-line: none;
+        text-decoration-style: solid;
+      }
+
+      .Advanced_header {
+        background-color: rgb(191, 190, 190);
+      }
+
+      #advanced_logo {
+        margin-left: 10px;
+      }
+
+      .title {
+        background-color: white;
+        margin-top: 5px;
+      }
+
+      hr {
+        height: .5px;
+      }
+
+      table,
+      td {
+        margin-top: 10%;
+        margin-left: 20%;
+        margin-right: auto;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        text-align: left;
+      }
+
+      tr {
+        font-size: 30px;
+      }
+
+      td {
+        font-size: 20px;
+      }
+
+      input[type=search] {
+        width: 150%;
+        border-radius: 0px;
+        height: 25px;
+      }
+
+      input[type=submit] {
+        background-color: blue;
+        color: white;
+      }
+
+      label {
+        font-size: 15px;
+      }
+
+      p {
+        font-family: consolas, monospace;
+        font-size: 15px;
+        margin-left: 100px;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <div class="Advanced_header">
+        <div class="links" ; style="text-align: right;">
+          <a href="google-search.html">Google Search</a>
+          <br>
+          <a href="google-image.html">Google Images</a>
+        </div>
+        <div id="advanced_logo">
+          <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="google logo" style="width: 100px;">
+        </div>
+      </div>
+      <div class="title">
+        <h1>Advanced Search</h1>
+        <hr>
+      </div>
+    </div>
+    <div class="Advanced_body">
+      <table>
+        <tr>
+          <th>Find pages with...</th>
+          <th> </th>
+          <th>To do this in the search box</th>
+        </tr>
+        <form action="https://www.google.com/search?" method="GET">
+          <tr>
+            <td><label for="as_q">all of these words:</label></td>
+            <td><input type="search" name="as_q" autofocus="autofocus"></td>
+            <td>
+              <p>Type the important words: tricolor rat terrier</p>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="as_epq">this exact word or phrase:</label></td>
+            <td><input type="search" name="as_epq" autofocus="autofocus"></td>
+            <td>
+              <p>Put exact words in quotes: "rat terrier"</p>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="as_oq">any of these words:</label></td>
+            <td><input type="search" name="as_oq" autofocus="autofocus"></td>
+            <td>
+              <p>Type OR between all the words you want: miniature OR standard</p>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="as_eq">none of these words:</label></td>
+            <td><input type="search" name="as_eq" autofocus="autofocus"></td>
+            <td>
+              <p>Put a minus sign just before words you don't want: -rodent, -"Jack Russell"</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td style="text-align: right; "><input type="submit" value="Advanced Search"></td>
+          </tr>
+        </form>
+      </table>
+    </div>
+  </body>
+</html>
