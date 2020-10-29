@@ -1,0 +1,17 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+Search Up
+{% endblock %}
+
+{% block body %}
+<h1>Page(s) that have {{ name }} in it</h1>
+<hr>
+<ul>
+  {% for entry in entries %}
+  {% if names in entry %}
+  <li><a href="{{ entry }}" name> {{ entry }} </a></li>
+  {% endif %}
+  {% endfor %}
+</ul>
+{% endblock %}

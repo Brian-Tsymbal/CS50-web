@@ -1,0 +1,14 @@
+{% extends "encyclopedia/layout.html" %}
+
+
+{% block title %}
+page
+{% endblock %}
+
+{% block body %}
+<h1>Developer Page</h1>
+<hr>
+<p> <b>list from util.list_entries: </b> {{ entries }} </p>
+<p> <b>list from new_list_entries: </b>{{ lists }} </p>
+<p> <b>length of new_list_entries: </b> {{ length }}</p>
+{% endblock %}

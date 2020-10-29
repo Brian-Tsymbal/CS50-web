@@ -1,0 +1,14 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+Error
+{% endblock %}
+
+{% block body %}
+<h1>Error</h1>
+<hr>
+<div>
+  <p><b>Error This Page Was Not Found!</b></p>
+  <p>We are sorry, but the page you are looking for does <b>not exist</b>. Please try search again, making sure you are spelling the page <i>correctly</i>. If you are <b><i>still</i></b> being redirected to this page, feel free to create a new page at <a href="{% url 'create' %}">Create a New Page</a></p>
+</div>
+{% endblock %}
