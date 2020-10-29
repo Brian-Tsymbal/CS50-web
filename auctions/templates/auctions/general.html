@@ -1,0 +1,113 @@
+{% extends "auctions/layout.html" %}
+{% block body %}
+{% if user.is_authenticated%}
+<h1>{{ item.Title }} </h1>
+<h5 style="font-size: 90%; color: navy;"><i>By: {{ item.Creator }}</i></h5>
+<br>
+{% if item.Active == True %}
+{% if item.Creator == request.user %}
+<form method="POST" action="{% url 'listing' item.id %}">
+  {% csrf_token %}
+  {{ ClosingForm.as_p }}
+  <p>If You Close This Form, You Will Not Be Able to Open it Back Up. Do You Wish To Continue?</p>
+  <input type="submit" value="End This Auction">
+</form>
+{% else %}
+{% if Watchlist %}
+<form method="POST" action="{% url 'listing' item.id %}">
+  {% csrf_token %}
+  {{RemoveItem}}
+  <input type="submit" value="Remove!">
+</form>
+{% else %}
+<form method="POST" action="{% url 'listing' item.id %}">
+  {% csrf_token %}
+  {{WatchlistForm}}
+  <input type="submit" value="Add!">
+</form>
+{% endif %}
+{% endif %}
+<hr>
+<h2>Image</h2>
+{% if item.Image %}
+<img src="{{ item.Image }}" ; alt="image of the listing" style="height: 100%;">
+{% else %}
+<p><i>there is no image associated with this post</i></p>
+{% endif %}
+<h2>Description</h2>
+<p> {{ item.Description }}</p>
+<h2>Starting Bid:</h2>
+<p>$ {{ item.PriceInt }}</p>
+<hr>
+<div style="
+  display: flex; 
+  flex-direction: row; 
+  align-self: center;
+">
+  <div style="
+  padding: 5px;
+  margin: 5%;
+  margin-left: 20%;
+">
+    {% if request.user != item.Creator %}
+    {% if item.Price == item.PriceInt %}
+    <p>The Starting Bid Is: ${{ item.PriceInt }}</p>
+    <a href="{% url 'Biding' item.id %}"><b>Place Your Bid Here</b></a>
+    {% else %}
+    <p>The Current Highest Bid: ${{ item.Price }}</p>
+    <p>By Bidder: <b>{{HighestBidder}}</b></p>
+    <a href="{% url 'Biding' item.id %}"><b>Place Your Bid Here</b></a>
+    {% endif %}
+    {% else %}
+    {% if item.Price == item.PriceInt %}
+    <p><i>No One Has Bid on Your Listing</i></p>
+    {% else %}
+    <p>The Current Highest Bid: ${{ item.Price }}</p>
+    <p>By Bidder: <b>{{HighestBidder}}</b></p>
+    {% endif %}
+    {% endif %}
+  </div>
+
+
+
+  <div style=" padding: 5px; margin-top: 5%; margin-left: 20%; ">
+    <div style="border-left: 6px solid black;
+      height: 100%;
+      position: absolute;
+      left: 50%;
+      margin-left: -3px;
+      "></div>
+    {% if comments %}
+    {% for comment in comments %}
+    <p><b><u>{{comment.user}}:</u></b> {{ comment.comment }}</p>
+    {% endfor %}
+    {% else %}
+    <p><i>there are no comments on this listing</i></p>
+    {% endif %}
+    <form method="POST" action="{% url 'listing' item.id %}">
+      {% csrf_token %}
+      {{ commentForm }}
+      <input type="submit" value="Add Comment">
+    </form>
+  </div>
+</div>
+{% else %}
+<div style="
+  text-align: justify;
+  display: flex;
+  flex-direction:column; 
+  max-width: 50%;
+  border: 1px solid black;
+  margin: 5px; 
+  margin-left: 25%;
+  padding: 5%;">
+  <h2><b>The Bidding For This Item Is Closed</b></h2>
+  <h3>The Winning:</h3>
+  <h4>User: <b>{{ HighestBidder }}</b></h4>
+  <h4>Bid: <b>${{ item.Price }}</b></h4>
+</div>
+{% endif %}
+{% else %}
+<p><b>Please Log-In or Create a New Account to See This Listing</b></p>
+{% endif %}
+{% endblock %}

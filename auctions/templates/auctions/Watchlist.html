@@ -1,0 +1,32 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+{% if request.user %}
+<h2>Your Watchlist</h2>
+
+<div>
+  {% if list %}
+  {% for items in list %}
+  <div style="
+  text-align: justify;
+  display: flex;
+  flex-direction:column; 
+  max-width: 25%;
+  border: 1px solid black;
+  margin: 5px; 
+  margin-left: 36%;
+  padding: 5%;">
+    <b> Item: <a href="{% url 'listing' items.item.id %}">{{ items.item.Title }}</a></b>
+    Initial Bid: ${{ items.item.PriceInt }}
+    <br>
+    Top Bid: ${{ items.item.Price }}
+  </div>
+  {% endfor %}
+  {% else %}
+  <p><i>You Have No Items in Your Watchlist</i></p>
+  {% endif %}
+</div>
+{% else %}
+<p><b>Please Log-In or Create a New Account to See the Listings</b></p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "auctions/layout.html" %}
+{% block body %}
+{% if user.is_authenticated%}
+<br>
+<br>
+<br>
+<div style="font-size: 20px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; text-align: center;">
+  <p><b><u>You Are Bidding On Item number {{ item.id }}: {{ item.Title }}</u></b></p>
+  <p><b><u>The Starting Bid is: $ {{ item.Price }}</u></b></p>
+  <br>
+  <br>
+  <form method="POST" action="{% url 'Biding' item.id %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="BID!">
+  </form>
+  {{ error }}
+</div>
+{% else %}
+<p><b>Please Log-In or Create a New Account to See This Listing</b></p>
+{% endif %}
+{% endblock %}

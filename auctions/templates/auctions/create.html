@@ -1,0 +1,31 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+<h2 style="text-align: center;">New Listing</h2>
+<h3 style="text-align: center;">For a listing to be posted we need the following information</h3>
+<form style="text-align: center;" method="POST" action="{% url 'create' %}">
+  {% csrf_token %}
+  <label for="Categories">Which Category Does Your Bid Fall Under:</label>
+  <select id="Categories" name="Categories" required>
+    <option value="Technology">Technology</option>
+    <option value="Tools">Tools</option>
+    <option value="Fashion">Fashion</option>
+    <option value="Toys">Toys</option>
+  </select>
+  <br>
+  <label for="Title">What Is The Title:</label>
+  <input name="Title" type="text" placeholder="Title" maxlength="25" required>
+  <br>
+  <label for="Description">Give a Short Description:</label>
+  <input name="Description" type="text" placeholder="Description" maxlength="150" required>
+  <br>
+  <label for="Value">What is Your Starting Bid:</label>
+  <input name="Value" type="number" placeholder="Starting Bid" min="0" required>
+  <br>
+  <label for="Image">If You Would LIke to add a Photo:</label>
+  <input name="Image" type="url" placeholder="Image">
+  <br>
+  <input type="submit" value="Post!">
+</form>
+
+{% endblock %}

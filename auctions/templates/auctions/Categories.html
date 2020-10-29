@@ -1,0 +1,41 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+{% if user.is_authenticated%}
+
+<h1>Search By Categories</h1>
+<hr>
+<form method="POST" action="{% url 'categories' %}">
+  {% csrf_token %}
+  {{ form }}
+  <input type="submit" value="Filter">
+</form>
+{% if entries %}
+{% for entries in listings %}
+<div>
+  <div style="
+  text-align: justify;
+  display: flex;
+  flex-direction:column; 
+  max-width: 50%;
+  border: 1px solid black;
+  margin: 5px; 
+  margin-left: 25%;
+  padding: 5%;">
+    <h3><a href="{% url 'listing' entries.id %}">{{ entries.Title }}</a></h3>
+    <hr>
+    {% if entries.Image %}
+    <img src="{{ entries.Image }}" ; alt="image of the listing">
+    {% else %}
+    <p><i>there is no image associated with this post</i></p>
+    {% endif %}
+    <p>{{ entries.Description }}</p>
+    <p><b>Price: $ {{ entries.PriceInt }} </b></p>
+  </div>
+</div>
+{% endfor %}
+{% endif %}
+{% else %}
+<p><b>Please Log-In or Create a New Account to See This Listing</b></p>
+{% endif %}
+{% endblock %}

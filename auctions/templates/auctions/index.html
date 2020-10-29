@@ -1,0 +1,48 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+{% if user.is_authenticated%}
+<h2>Active Listings</h2>
+{% if listing != none %}
+<a href="{% url 'categories' %}">Look At The Different Types of Categories</a>
+{% for element in listing %}
+{% if element.Active == True %}
+<div>
+  <div style="
+  text-align: justify;
+  display: flex;
+  flex-direction:column; 
+  max-width: 50%;
+  border: 1px solid black;
+  margin: 5px; 
+  margin-left: 25%;
+  padding: 5%;">
+    <h3><a href="{% url 'listing' element.id %}">{{ element.Title }}</a></h3>
+    <hr>
+    {% if element.Image %}
+    <img src="{{ element.Image }}" ; alt="image of the listing" style="height: 100%;">
+    {% else %}
+    <p><i>there is no image ass ociated with this post</i></p>
+    {% endif %}
+    <br>
+    <p><b>Description: </b>{{ element.Description }}</p>
+    <br>
+    <p><b>Starting Bid:</b> $ {{ element.PriceInt }}</p>
+  </div>
+</div>
+{% endif %}
+{% endfor %}
+<h5>Auction that have ended:</h5>
+{% for element in listing %}
+{% if element.Active == False %}
+<a href="{% url 'listing' element.id %}">{{ element.Title }}</a>
+<br>
+{% endif %}
+{% endfor %}
+{% else %}
+<p><b>There are no current listings</b></p>
+{% endif %}
+{% else %}
+<p><b>Please Log-In or Create a New Account to See the Listings</b></p>
+{% endif %}
+{% endblock %}
