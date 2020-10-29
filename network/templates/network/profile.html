@@ -1,0 +1,75 @@
+{% extends "network/layout.html" %}
+
+{% block body %}
+<div id="profile_header">
+  <img id="profile_photo" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw8QDw4ODxIQDxAOEhAQEBAPEA8PDxIQFxEXFhYRFRYYHSggGBwlGxYVITEiJSkrLi4uFx80ODMsOSguLisBCgoKDg0OGxAQGC0iHyUuLS0vLS0tLi0rNTUtLS43NzYvLS0tKy0tKy0tLystLTAtNSstLS0vLS0tLTctKy03Lf/AABEIANwA5QMBIgACEQEDEQH/xAAcAAEAAQUBAQAAAAAAAAAAAAAABAIDBQYHAQj/xABIEAABAwMABAkHCQYEBwAAAAABAAIDBBESBSExUQYHQVJhcYGRoRMUIjKSk9IzQlNicrHB0dMVFjSCouElc8LwI0NEY6Oys//EABkBAQADAQEAAAAAAAAAAAAAAAACAwUEAf/EACcRAQEAAgICAAUEAwAAAAAAAAABAhEDBBIxEyEyQZEiUWFxI7Hw/9oADAMBAAIRAxEAPwDuKIiAiIgIiICIiAiLQOFfDV5fJR6OLcmEtnqyA5kR5WRjY9/gPujnnMZuvccbldRs+nuE1HRAecSAPd6kLAXzP+ywa+02HStSrOG9fL/C08VLGdklY4ulI3iNh9E9ZK1eniZGXPF3yvN5J5SXzPPKS4q6ZL7da4s+zlfTpx4ZPaXUVlbL8vpGqN/m0zY6Zo6LtFyoj6KF3yj6uXplqpnfivM0zVF5Mr91kxkUfsqj+if1+Xmv96ux0rG/JTVsG4xVUot2EqnNM1555PfGMnS6Z0lD8jWicDZFXRB3/kZZy2DRvGDGC2PSELqNx1CYHytK4/bGtnaO1aZmqhLqLTYtOotOtpHUrcOxnEMuLGuyRSNe1r2EOa4Atc0hzSDsII2hVrjmhtKT6PdnS3kpyby0Tj6Ova+E/Md0bD3LquhdLwVkDKindkx+/U5rhtY4cjhuXbx8sz9ObPC4pyIitQEREBERAREQEREBERAREQEREBEVivq2QRSzyGzIWOkedzWgk/cg03jH4SPiDdH0zsZ6hpdLI064YNhI3OdrA3azq1LRIGNjY2Ngxa3YPxVjzt88k1XL8rVPMjuXFuxkY6A2wVeazOXk88nbx4eMX80zUZ0oAJJsBtJ2KVofRNTW2dHeCn5Z3D03j/tN/E/2VWk1iWtjY5rXOAc42A5f7K9mtypuCVEyCSDyQcJRaSR/pTOO3LPkN9eqwutHraSWjm81mOV7mCXklj+Ico/tdr9ntlntezTNWM0zR4v5pmrGaZoJAer+hNNO0fU+ctuaeUhtXENd28k7Rzm37RfrUDNeFwOo6wdRUscrjdx5ZLNV3aGVr2tewhzXgOa4G4LSLgg7rKtaFxU6WLoptHvN3UhD4SdppnnUOnF1x1Fq31amGXlNuHKauhERSeCIiAiIgIiICIiAiIgIiIC0njZriyhZTg2NZMyI7/Jt9N5/pA/mW7LlfG7UXq6GLkjimlt0vc1oP9BVfNdYVPjm8o1PNePmABJNgNZKsZrLcFdD+eTGSQXpqdwuDsll249LRtPYst2ybuom8GeDZqcamqBEOp0MB1eU3SSdG4cvVt39jQAANQGoAagBuVLVWFDe18xmMVhQNPaFirIDDJqPrRyD1o5BscPxHKFkAqwrIhk47MyWGV9NUDGaP2ZG8kjN4KZrqmmtBU9YwMnZct9SRpxkYd7XcnVsWiaU4FVsBJgLauPkFxHOB0g+i7sNzuUriqYbNM1FqJTEcZmSQO5szHRnx2qjzuPnt7wo6NpuaZq3R01TOHPp4JJmN2vFmtPQ2/rHoCssmvfaC0kOa4Wc0jaCOQpoZrgvpDzfSVFNezZH+bSdLJdTb9T8T2LuC+ca2Qhhc02cyz2nc5pBB8F9E0swfHHINj2teOoi67erflY5+afPa6iIupQIiICIiAiIgIiICIiAiIgLjnGs/wDxRo3UkXjLIuxrjfG6y2konc+kjHdLJ+ao7H0LOL6mpnJxbHHrfK5sbB9ZxsF1nRFAymgigZsjba/Odtc49ZuVoHAOk8rWGQ620zC4f5j/AEW+GXculBZXJfs0uLH5bXAqwrYVwJinVwK4FaCrBVsVVdCEqkFCVPaGlMjQ4WcARuIBCg/sumByEEAO/wAlHfvspxKoKhanIoO7ctF4wtEAAV8Ys5payoA+cwmzXnpBsOo9C3kqNW0zZY5In62ytcx3URZQ3qp3Hc041UO9B/2T9y+geDRJoaInaaanJ6/JNXzrUtcxssbvXiLo3faacSvpTR0Hk4YY/o442ey0D8F39We3BzfZIREXW5xERAREQEREBERAREQEREBc5449DufDBWsBPmxcyW30TyLO7HAe2V0ZUTwte10bwHMeC1zXC7XNIsQRyiyjnj5TT3G6u3JOLWC1PPLyyTWv9VrRbxc5biFC0boqOjEtNFfBkshbkbkNccgL8tgbX6FMCw+T662sJ+mLgVxpVppVYKSvLF0FVAq2CqgVZKrsXLpdUXS6lt5pUSqCUJVJK8teyPCVQV6SqHFVWrJHKuFtB/iboh/1T4HNHTIQ0/1Ar6AWh0/B9lRpSmqnn0aSIux5XSB58nfoBc53WAt8Wp1Po2zezNZ6ERF1OcREQEREBERAREQEREBERAREQaxpNlqmb6wY8ezY+IVhZDhDFaSGTkcHRnr9Zv8AqWPWJ2MfHlrZ4cvLjxv8f6egqsFW1UCqpU7FwFVAq2CvbqcqNi5dLqi6XXu0dKiV4SqbrwleWvZAlUkoSqSVC1ORkeDrbyTu3CNg8SfvCzqxnB2K0GR2yuc/s2DwAWTWz1sfHikZXZy3y3/vQiIr1AiIgIiICIiAiIgIiICIiAiIghaXpjLC9o9Yemz7TdY79natcjfkARyrcFrOk6byUpt6kpLm7g/5zfxWf3eLcmcd/T5PeF/uI6IizXe9BXt1Sl17t5pXdLqi69uvdvNKrqkleXRebe6FS5heWxt9aQho6BynsF1Uslwfpbk1DtmtkXV85/bs7Fbw8fxM5EOTk+HjcmaijDWtaNQaA0DoAsFUiLcYoiIgIiICIiAiIgIiICIiAiIgIiICsVtK2Vhjdy6wRta7kcFfReWSzVey2Xcai9jmOMcmp7e5w5HDoRZrhDGzyDnuHpR2LHDUQ4kC3V0LXIakHU7Ud/IVjdjh+HlqNjh5PiYeSSiIudaIiICLwkDWdSiT1N7hmr635L0kZCjpDO/AXEbflHD/ANB0nwW0MaAA0CwAAAGwAcijaJDfIQ4ANBY02G8jX4qWtnr8M48f5rJ7HLc8tfaCIi6HOIiICIiAiIgIiICIiAiIgIiICLF6S4RUNNqqKqnhPNfKwPPU29z3LXarjP0cCRTtqax2y1PTvtf7T8RbqQbsi5xPw90lJfzegjgbySVk9++NgBHesTVaY0rL8tpKOnB2x0ULL+067h3oN54U1d3MgHzfTf1/NH3nuWCUWgqGvaLPdIRZpfIXOkcQLXcTrJUpY3PlcuS2tjixmOEkVMkc3Yew6wroqzytB6jZWEsqdLfJJ88+qe8Kh1U7kAHXrVrFMU0eQ4k+sSfu7l4iI8t22zg1LlTNHMc5vjf7iFlVynSFdVMkApK7zQj1o3RRyxvJ+ccgbG2rUr9Nwu01H6zKCtaOWNz4JD23LfBbXBd8eO/2ZPYn+XL+3T0XP4eMtzLed6Oq4t5gMdSwdvonwWUouMjREhsagQu5W1EckNu1wx8VapbYiiUOk6ecZQTQzg8sMrJB3tJUtAREQEREBERAREQeOcACSQANZJ1ADetE0xxmQNc6KgidXvbqMjXCOlB/zSDl2Cx3rWeHnCp1fNJRwOLaGFxZM5hsaqQbWgj/AJYOrpPRZa+JbNDGgMaNjW6gg2Ss4X6Ylv8A8akogfoYvLSAdchI8Fhqtz5v4qtram+1nlXRxH+RtgoWaZoL8EFLF8lTxg85/pnxUo6RktYENG5gDQsdmmaCW+dzvWJPWSVRmo+aZoMjQ1zonZDWD6w3j81tdJVMlaHMN/vB3HcVoeau09W+N2TCWnwPQRyrm5+vOT5z26eDsXD9N9OgNarzY1rFFwoAsJW9rdY7to8VmIOENMfngdZx++y4Lw54+47ZyY5erGRwXhYop07S/SM9tn5qHU8KKdvqnI/VBP5DxScdvqX8PfKT3Z+WSe1YvSekmQi2152N/E7gsLXcJJH3DBgN+ou/IeKw7pSSSSSTtJ1kro4upbd5/hRydqYzWHzv7pEkxcS5xuSbkrwPUbNM1oM+3acytkbse7vuPFVvri4WkbHIPrsaVjs0zQXJKKiecjAGO50TiwjqtZTKWpni/h9IVsO5skhnjH8r7hY/NM0G16P4c6Vp7eWEGkYh6xYBT1Nt/o+ieq3augcGuE1LpCMvp3nJlhLDIMJojue38RcG21cVbLbWNSNqZYpWVdM7yVVFscPVkbyxyD5zT/voD6DRYbgnwgj0hSsqYxi65ZNGTd0Uw9aM94I3ggrMoCIiAtR4ztOupKBzYjjPVu83iI2tyBL5OizQde8tW3LjHGzpDyuk44L+jRQDVullOTv6BH3oNXga1jWsbqDRYKvNR80zQSM0zUfNM0EjNM1HzTNBIzTNR80zQSM0zUfNM0EjNM1HzTNBIzTNR80zQSM0zUfNM0EjNM1HzTNBIzTNR80zQSM0zUfNM0EjNM1HzTNBtHF1pk0mkmRk2g0haJ45G1A1xP7dbenIbl2xfM1U52Jcw4vYQ9jhta9pya4doX0XoPSDaqlpqpuyeKOW24uaCR2HV2IJyIiAvnThPV+V0lpKXfUyMv0RWiHgxfRa+XZZ85Jn/SSyv9qQn8UF7NM1HzTNBIzTNR80zQSM0zUfNM0EjNM1HzTNBIzTNR80zQSM0zUfNM0EjNM1HzTNBIzTNR80zQSM0zUfNM0EjNM1HzTNBIzTNR80zQSM0zUfNM0EjNdk4nazymimx3uaWaeE9WXlAO6QLiea6lxG1HoaRh5skMvtsLT/APMIOpIiIPLr5RjNhY7Re/evqYvK4nX8VukfLSmJ1M6MvcWF0j2OxJuLtxNtttqDSM0zW3Hiv0pvpPfSfAqTxZaT30vvpP00Gp5pmtrPFppLnUvvZP01SeLfSPOpfey/poNWzTNbQeLnSPOpfey/pqk8XmkOdS+8l/TQazmma2Q8X1fzqb3kv6a8PACu51N7yX4EGuZpmti/cOu51P7yX4F4eAtbzqf25fgQa9mma2D9xq3nU/tyfAvP3HrOdT+3J8CDAZpms8eBFbzqf25PgT9yK3fT+3J8CDA5pms+OA1bzqf3knwL0cBK7nU/vJfgQa/mma2IcAq7nU3vJfgVQ4v67n03ty/Ag1vNM1s44vK7n03ty/Aqhxc13Ppvbl+BBq2aZrbBxbV/0lN7cvwKocWdf9JS+3L8CDUc0zW4jivr/paX2pvgVY4rK/6al9qb4EGl5rpHEbLaqr286GF3svcP9axw4qK/6al75vgW1cXnAmq0dVSzzSQvZJC6K0Rkyy8oxwPpNGqzXd6DpV0VgORBcMapMSvIgjGBUmmUtEEE0gVBogsilkGLNCFSdHhZWyWQYc6NCoOjAs3ZMUGCOihuVJ0SNyz+IXlggwB0QNy8/Y43LYLJZBr37HG5e/scblsFksgwA0QNyqGiRuWdsvcQgwY0WFUNGBZrEJZBiBo4KoUAWVslkGNFCFWKMKfZeoIQpVWKdSkQRxCqxErqIKAxeK4iD//Z" , alt="user_photo">
+  <h1>{{User.username}}</h1>
+  {% if User.username != user.username %}
+  {% if unfollow %}
+  <button id="{{User.id}}_follow_unfollow__btn" onclick="follow('{{User.id}}')">Unfollow.</button>
+  {% else %}
+  <form method="POST" action="{% url 'UserProfile' User.id %}">
+    {% csrf_token %}
+    <button id="{{User.id}}_follow_unfollow__btn" onclick="follow('{{User.id}}')">Follow!</button>
+  </form>
+  {% endif %}
+  <br>
+  <br>
+  {% endif %}
+  <table>
+    <tr>
+      <th>Following</th>
+      <th>Followers</th>
+    </tr>
+    <tr>
+      <td>{{followers}}</td>
+      <td>{{following}}</td>
+    </tr>
+  </table>
+  <hr>
+</div>
+<div id="profile_body">
+  {% for post in AllPosts %}
+  <div id='{{post.id}}-profile'>
+    <br>
+    <div id='{{post.id}}' class="individual_posts">
+      <p class="username_of_post" onclick="SeeProfile('{{post.user_id}}')">User: {{post.user}}</p>
+      <hr>
+      Sent:
+      <br>
+      <b id="{{post.id}}_content">{{post.body}}</b>
+      {% if post.user == active_user %}
+      <br>
+      <small style="cursor: pointer;" onclick="editpost('{{post.id}}')">(edit)</small>
+      <form style="display: none;" id="edit_form:{{post.id}}">
+        <textarea rows="4" cols="50" id="edit_answer:{{post.id}}"></textarea>
+        <input id="edit_answer:{{post.id}}_submit" type="submit" value="update">
+      </form>
+      {% endif %}
+      <br>
+      <br>
+      <svg onclick="Likepost('{{post.id}}')" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-heart" fill="black000" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a9.84 9.84 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733.058.119.103.242.138.363.077.27.113.567.113.856 0 .289-.036.586-.113.856-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.163 3.163 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16v-1c.563 0 .901-.272 1.066-.56a.865.865 0 0 0 .121-.416c0-.12-.035-.165-.04-.17l-.354-.354.353-.354c.202-.201.407-.511.505-.804.104-.312.043-.441-.005-.488l-.353-.354.353-.354c.043-.042.105-.14.154-.315.048-.167.075-.37.075-.581 0-.211-.027-.414-.075-.581-.05-.174-.111-.273-.154-.315L12.793 9l.353-.354c.353-.352.373-.713.267-1.02-.122-.35-.396-.593-.571-.652-.653-.217-1.447-.224-2.11-.164a8.907 8.907 0 0 0-1.094.171l-.014.003-.003.001a.5.5 0 0 1-.595-.643 8.34 8.34 0 0 0 .145-4.726c-.03-.111-.128-.215-.288-.255l-.262-.065c-.306-.077-.642.156-.667.518-.075 1.082-.239 2.15-.482 2.85-.174.502-.603 1.268-1.238 1.977-.637.712-1.519 1.41-2.614 1.708-.394.108-.62.396-.62.65v4.002c0 .26.22.515.553.55 1.293.137 1.936.53 2.491.868l.04.025c.27.164.495.296.776.393.277.095.63.163 1.14.163h3.5v1H8c-.605 0-1.07-.081-1.466-.218a4.82 4.82 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z" />
+      </svg>
+      <svg onclick="DislikePost('{{post.id}}')" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-heart" fill="red" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M6.956 14.534c.065.936.952 1.659 1.908 1.42l.261-.065a1.378 1.378 0 0 0 1.012-.965c.22-.816.533-2.512.062-4.51.136.02.285.037.443.051.713.065 1.669.071 2.516-.211.518-.173.994-.68 1.2-1.272a1.896 1.896 0 0 0-.234-1.734c.058-.118.103-.242.138-.362.077-.27.113-.568.113-.857 0-.288-.036-.585-.113-.856a2.094 2.094 0 0 0-.16-.403c.169-.387.107-.82-.003-1.149a3.162 3.162 0 0 0-.488-.9c.054-.153.076-.313.076-.465a1.86 1.86 0 0 0-.253-.912C13.1.757 12.437.28 11.5.28v1c.563 0 .901.272 1.066.56.086.15.121.3.121.416 0 .12-.035.165-.04.17l-.354.353.353.354c.202.202.407.512.505.805.104.312.043.44-.005.488l-.353.353.353.354c.043.043.105.141.154.315.048.167.075.37.075.581 0 .212-.027.415-.075.582-.05.174-.111.272-.154.315l-.353.353.353.354c.353.352.373.714.267 1.021-.122.35-.396.593-.571.651-.653.218-1.447.224-2.11.164a8.907 8.907 0 0 1-1.094-.17l-.014-.004H9.62a.5.5 0 0 0-.595.643 8.34 8.34 0 0 1 .145 4.725c-.03.112-.128.215-.288.255l-.262.066c-.306.076-.642-.156-.667-.519-.075-1.081-.239-2.15-.482-2.85-.174-.502-.603-1.267-1.238-1.977C5.597 8.926 4.715 8.23 3.62 7.93 3.226 7.823 3 7.534 3 7.28V3.279c0-.26.22-.515.553-.55 1.293-.138 1.936-.53 2.491-.869l.04-.024c.27-.165.495-.296.776-.393.277-.096.63-.163 1.14-.163h3.5v-1H8c-.605 0-1.07.08-1.466.217a4.823 4.823 0 0 0-.97.485l-.048.029c-.504.308-.999.61-2.068.723C2.682 1.815 2 2.434 2 3.279v4c0 .851.685 1.433 1.357 1.616.849.232 1.574.787 2.132 1.41.56.626.914 1.28 1.039 1.638.199.575.356 1.54.428 2.591z" />
+
+      </svg> <b>Likes: </b><b id="{{post.id}}_like_value">{{post.likes}}</b>
+      <p>{{post.timestamp}}</p>
+    </div>
+  </div>
+</div>
+{% endfor %}
+<div class="paginator">
+  <nav aria-label="Page navigation example">
+    <ul class="pagination">
+      {% if AllPosts.has_previous %}
+      <li class="page-item"><a class="page-link" href="?page={{AllPosts.previous_page_number}}">Previous</a></li>
+      {% endif %}
+      {% if AllPosts.has_next %}
+      <li class="page-item"><a class="page-link" href="?page={{AllPosts.next_page_number}}">Next</a></li>
+      {% endif %}
+    </ul>
+  </nav>
+</div>
+{% endblock %}
