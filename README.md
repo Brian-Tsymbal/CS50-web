@@ -2,6 +2,8 @@
 CS50-web is an extension course of Harvard's introduction to web development using python and JavaScript
 I took this course during the summer between my Senior and Junior year of high school. Here are all of my projects created based on the spesifications of the Harvad Computer Science Professors.
 
+Each branch under the main branch is for each individual project. 
+
 videos related to the projects:
 
 Lecture0: https://www.youtube.com/watch?v=zFZrkCIc2Oc&feature=youtu.be
